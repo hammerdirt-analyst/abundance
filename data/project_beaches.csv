@@ -1,0 +1,25 @@
+,slug,location,latitude,longitude,city,post,country,water,water_name,city_slug,water_name_slug,is_2020
+14,baby-plage-geneva,Baby Plage Geneva,46.208558,6.162923,Genève,1208,CH,l,Lac Léman,geneve,lac-leman,True
+15,bagno-pubblico-ascona,Bagno Pubblico Ascona,46.147565,8.779144,Ascona,6612,CH,l,Lago Maggiore,ascona,lago-maggiore,True
+16,bain-des-dames,Bain des Dames,46.4505068,6.8580918,La Tour de Peilz,1814,CH,l,Lac Léman,la-tour-de-peilz,lac-leman,True
+19,baye-de-montreux-g,Baye de Montreux G,46.430834,6.908778,Montreux,1820,CH,l,Lac Léman,montreux,lac-leman,True
+21,bielersee_vinelz_fankhausers,Bielersee_Vinelz_FankhauserS,47.0383984,7.1083114,Vinelz,3234,CH,l,Bielersee,vinelz,bielersee,True
+36,evole-plage,Evole plage,46.989477,6.92392,Neuchâtel,2000,CH,l,Neuenburgersee,neuchatel,neuenburgersee,True
+39,grand-clos,Grand Clos,46.387746,6.843686,Saint Gingolph,1898,CH,l,Lac Léman,saint-gingolph,lac-leman,True
+47,gasi-strand,Gäsi Strand,47.128442,9.110831,Weesen,8872,CH,l,Walensee,weesen,walensee,True
+54,la-petite-plage,La Petite plage,46.785054,6.656877,Yverdon-les-Bains,1400,CH,l,Neuenburgersee,yverdon-les-bains,neuenburgersee,True
+73,mullermatte,Müllermatte,47.133339,7.227907,biel,2505,CH,l,Bielersee,biel,bielersee,True
+74,neuenburgersee_cudrefin_mattera,Neuenburgersee_Cudrefin_MatterA,46.9627089,7.0259681,Cudrefin,1588,CH,l,Neuenburgersee,cudrefin,neuenburgersee,True
+80,plage-de-cheyres,Plage de Cheyres,46.818689,6.782256,Cheyres,1468,CH,l,Neuenburgersee,cheyres,neuenburgersee,True
+82,plage-de-st-sulpice,Plage de St Sulpice,46.513265,6.570977,Saint Sulpice,1025,CH,l,Lac Léman,saint-sulpice,lac-leman,True
+83,preverenges,Préverenges,46.51269,6.527657,Préverenges,1028,CH,l,Lac Léman,preverenges,lac-leman,True
+84,quai-maria-belgia,Quai Maria Belgia,46.460156,6.836718,Vevey,1800,CH,l,Lac Léman,vevey,lac-leman,True
+116,strandbeiz,Strandbeiz,47.2158617,8.8430984,Jona city,8645,CH,l,Zurichsee,jona-city,zurichsee,True
+117,thunersee_spiez_meierd_1,thunersee_spiez_meierd_1,46.7044368,7.6578824,Spiez,3646,CH,l,Thunersee,spiez,thunersee,True
+127,versoix,Versoix,46.289194,6.1705693,Versoix,1290,CH,l,Lac Léman,versoix,lac-leman,True
+134,vira-gambarogno,Vira Gambarogno,46.143565,8.839025,Gambarogno,6574,CH,l,Lago Maggiore,gambarogno,lago-maggiore,True
+136,walensee_walenstadt_wysse,Walensee_Walenstadt_WyssE,47.1218282,9.2995517,Walenstadt,8880,CH,l,Walensee,walenstadt,walensee,True
+137,weissenau-neuhaus,Weissenau-Neuhaus,46.676583,7.817528,Unterseen,3800,CH,l,Thunersee,unterseen,thunersee,True
+139,zuerichsee_richterswil_benkoem_2,zuerichsee_richterswil_benkoem_2,47.2176458,8.6987133,Richterswil,8805,CH,l,Zurichsee,richterswil,zurichsee,True
+147,zurichsee_kusnachterhorn_thirkell-whitej,Zürichsee_Küsnachterhorn_Thirkell WhiteJ,47.3176849,8.5768602,Küsnacht,8700,CH,l,Zurichsee,kusnacht,zurichsee,True
+148,zurichsee_wollishofen_langendorfm,zürichsee_wollishofen_langendorfm,47.3458899,8.5361545,Zurich,8038,CH,l,Zurichsee,zurich,zurichsee,True
