@@ -45,23 +45,34 @@ def stackedBarChart(**kwargs):
                ha='left',
                x=0
               )
-
     plt.subplots_adjust(**kwargs['subplot_params'])
 
     plt.xticks([0])
     plt.ylim(0, y_max)
 
-    plt.title(**kwargs['the_title'], fontdict=kwargs['title_style'], **kwargs['the_title_position'])
+    plt.title(
+        kwargs['the_title']['label'],
+        fontdict=kwargs['title_style'],
+        pad=kwargs['the_title_position']['pad'],
+        loc=kwargs['the_title_position']['loc'],
+        )
     plt.suptitle(kwargs['the_sup_title']['label'],
                  fontdict=kwargs['sup_title_style'],
-                 color=kwargs['the_sup_title']['color'],
-                 x=kwargs['sup_title_position']['x']
+                 # color=kwargs['sup_title_style']['color'],
+                 x=kwargs['sup_title_position']['x'],
+                 y=kwargs['sup_title_position']['y'],
+                 va=kwargs['sup_title_position']['va'],
+                 ha=kwargs['sup_title_position']['ha']
                 )
 
     handles, labels = ax.get_legend_handles_labels()
     this = ax.legend(handles[::-1], labels[::-1], **kwargs['the_legend_style'])
     this._legend_box.align = kwargs['legend_title']['align']
-    save_the_figure(**kwargs['save_this'])
+
+    if(kwargs['tight_layout']):
+        plt.tight_layout()
+
+    save_the_figure(folder=kwargs['save_this']['folder'], file_name=kwargs['save_this']['file_name'], file_suffix=kwargs['save_this']['file_suffix'])
 
     plt.show()
     plt.close()

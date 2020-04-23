@@ -41,10 +41,20 @@ def check_for_folders(folders, here):
         print("Added folders to the local working directory")
     else:
         print("Directory already in place")
+def make_project_folder(here, project_name):
+    """
+    Makes a subdirectory in the current directory structure
+    """
+    project_folder = '{}/{}'.format(here, project_name)
+    if(os.listdir(project_folder)):
+        project_folder = project_folder
+    else:
+        os.mkdir(project_folder)
+    return project_folder
 
 def make_folders(folders, here):
     """
-    A dcitionary for locating folders in the directory.
+    A dictionary for locating folders in the directory.
     """
     my_folders = {}
     for folder in folders:
@@ -86,6 +96,9 @@ def json_file_get(this_path):
         data = json.load(infile)
         return data
 def unpack_survey_results(survey_results):
+    """
+    Assigns location tag to unique survey results
+    """
     unpacked = []
     for location_data in survey_results:
         location = location_data['location']
@@ -94,6 +107,9 @@ def unpack_survey_results(survey_results):
             unpacked.append(each_dict)
     return unpacked
 def json_file_to_csv(the_jsons, prefix):
+    """
+    Accepts a lsit of json files and writes to csv files.
+    """
     for obj in the_jsons:
         the_dict = json_file_get(obj[1])
         keys = the_dict[0].keys()
@@ -111,8 +127,12 @@ def dict_to_csv(the_dict, a_name, prefix):
         dict_writer.writerows(the_dict)
 
 def getIndexValues(aDf, anInt):
+    """
+    Returns the index values for a specified index level from a dataframe
+    """
     return aDf.index.get_level_values(anInt).unique()
 def getSummaryByKeyValue(aDf, anInt):
+
     aList = list(getIndexValues(aDf, anInt))
     theSummaries = {}
     for key in aList:
@@ -185,7 +205,7 @@ def start_end_date(start, end, date_format):
 def a_color_map(color_map_name='PuBuGn', look_up_table_entries=100):
     # provide a color map https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html
     return plt.cm.get_cmap(color_map_name,look_up_table_entries)
-def title_styles(fs=12, ff='sans-serif', fw='normal',va='baseline', ha='center'):
+def title_styles(fs=12, ff='sans-serif', fw='normal', color='black'):
     """For sup title use the following values:
 
     ff='sans-serif', fw='roman', fs=14, ha='left', va='baseline'
@@ -194,17 +214,24 @@ def title_styles(fs=12, ff='sans-serif', fw='normal',va='baseline', ha='center')
         'fontsize': fs,
         'fontfamily':ff,
         'fontweight': fw,
-        'verticalalignment': va,
-        'horizontalalignment': ha,
+        'color':color,
     })
-def title_position(x=0, pad=15):
+def title_position(loc='left', pad=15,):
     """For sup title use the following values:
+    """
+    return({
+        'loc':loc,
+        'pad':pad,
 
-    x=0.13, pad=0
+    })
+def the_sup_title_position(x=0, y=0.97, ha='left', va='top'):
+    """For sup title use the following values:
     """
     return({
         'x':x,
-        'pad':pad,
+        'y':y,
+        'ha':ha,
+        'va':va,
     })
 def title_content_color(content="A title", color="black"):
     return {'label':content, 'color':color}
@@ -234,9 +261,14 @@ def adjust_subplot_params(left=0.125, right=0.9, bottom=0.1,
             "wspace":wspace, "hspace":hspace})
 def file_params(folder, file_name, file_suffix):
     return {'folder':folder, 'file_name':file_name, 'file_suffix':file_suffix}
-def save_the_figure(folder='a/file/path/', file_name='a_file', file_suffix='.svg'):
-    save_me = '{}/{}{}'.format(folder, file_name, file_suffix)
-    plt.savefig(save_me, bbox_inches="tight")
+def save_the_figure(folder='a/file/path/', file_name='a_file', file_suffix=[]):
+    for ext in file_suffix:
+        save_me = '{}/{}{}'.format(folder, file_name, ext)
+        if ext == '.jpeg':
+            plt.savefig(save_me, bbox_inches="tight", dpi=300)
+        else:
+            plt.savefig(save_me, bbox_inches="tight")
+
 def make_stacked_blocks(the_data, ax, color):
     the_bottom = 0
     for i,block in enumerate(the_data):
