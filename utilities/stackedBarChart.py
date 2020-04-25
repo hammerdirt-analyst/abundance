@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
-from utilities.utility_functions import make_stacked_blocks as make_stacked_blocks
 from utilities.utility_functions import save_the_figure as save_the_figure
-from utilities.utility_functions import make_blocks
+from utilities.barchart_utilities import make_blocks
+from utilities.barchart_utilities import make_stacked_blocks
 import numpy as np
 
 
