@@ -215,3 +215,60 @@ def save_the_figure(folder='a/file/path/', file_name='a_file', file_suffix=[]):
             plt.savefig(save_me, bbox_inches="tight", dpi=300)
         else:
             plt.savefig(save_me, bbox_inches="tight")
+def make_code_dict(data, make_a_code=True, make_group=False, change_a_code=False, **kwargs):
+    """
+    """
+    if make_a_code:
+        the_object_to_return = {x["code"]:[x["material"],x["description"],x["source"]] for x in data}
+    elif make_group:
+        the_object_to_return = {x['location']:x['beaches'] for x in data}
+    elif change_a_code:
+        the_object_to_return = change_code_dict(data, kwargs['code'])
+    return the_object_to_return
+
+
+def change_code_dict(data, code, make_copy=True, **kwargs):
+    """Changes the incoming data in place and returns a copy. Does not save changes to disk.
+
+    Use to add or change attributes to code values when reading from the api.
+    """
+    my_keys = list(kwargs.keys())
+    for key in my_keys:
+        data[code][key] = kwargs[key]
+    return data.copy()
+
+def get_requested_data(x, y):
+    """
+    """
+    a_tuple = []
+    for every_thing_i_need in y:
+        what_i_need = '{}{}'.format(x, every_thing_i_need)
+        a_tuple.append(what_i_need)
+
+    return a_tuple
+
+def make_mo_year_abbrev(a_string_date):
+    """
+
+    """
+    month = a_string_date[5:7]
+    year = a_string_date[0:4]
+    months = {
+        0:'Jan',
+        1:'Feb',
+        2:'Mar',
+        3:'Apr',
+        4:'May',
+        5:'Jun',
+        6:'Jul',
+        7:'Aug',
+        8:'Sep',
+        9:'Oct',
+        10:'Nov',
+        11:'Dec',
+    }
+    
+
+
+    return '{}-{}'.format(months[int(month)-1], year)
+
